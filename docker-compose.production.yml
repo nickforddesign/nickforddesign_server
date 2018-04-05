@@ -1,0 +1,23 @@
+version: "3.0"
+services:
+  server:
+    build: .
+    image: nfd_server
+    container_name: nfd_server
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      # - nfd_certificate_data:/etc/letsencrypt/
+      - nfd_frontend_data:/static/frontend
+    restart: always
+volumes:
+  # nfd_certificate_data:
+    # external: true
+  nfd_frontend_data:
+    external: true
+# networks:
+#   default:
+#     external:
+#       name: nfd_network
+      

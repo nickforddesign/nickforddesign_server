@@ -1,0 +1,3 @@
+#!/bin/sh
+git --work-tree=/nickforddesign/server --git-dir=/nickforddesign/server/.git checkout -f
+docker-compose -f ../docker-compose.production.yml up --build
